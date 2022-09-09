@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="sub2" name="sub2" isExecutable="true">
+    <startEvent id="sid-eeb6d44b-6b42-4a25-9473-637fcea11628"/>
+    <userTask id="sid-d52eb33c-5145-4f7f-91fc-c4bf6835505e" name="主流程测试1" activiti:assignee="${assignee1}"/>
+    <sequenceFlow id="sid-fb8fdae1-fe53-4683-9bd5-95afbb4d4e25" sourceRef="sid-eeb6d44b-6b42-4a25-9473-637fcea11628" targetRef="sid-d52eb33c-5145-4f7f-91fc-c4bf6835505e"/>
+    <callActivity id="sid-ed17720c-0c29-4889-a17e-ee17c4d454fc" activiti:inheritVariables="true" calledElement="${call}" name="调用子流程"/>
+    <sequenceFlow id="sid-4b7f3a01-9fd3-47a5-9bf3-f233e37cc504" sourceRef="sid-d52eb33c-5145-4f7f-91fc-c4bf6835505e" targetRef="sid-ed17720c-0c29-4889-a17e-ee17c4d454fc"/>
+    <userTask id="sid-adfc1392-a76d-4bfd-8ae4-0ceec640f128" name="主流程测试2" activiti:assignee="${assignee2}"/>
+    <sequenceFlow id="sid-de01a187-662f-4e24-ab07-6a2e1ff10078" sourceRef="sid-ed17720c-0c29-4889-a17e-ee17c4d454fc" targetRef="sid-adfc1392-a76d-4bfd-8ae4-0ceec640f128"/>
+    <endEvent id="sid-d91668b1-fd7c-4171-ac86-42b01a614e73"/>
+    <sequenceFlow id="sid-e285ab00-ec0b-4a35-82bf-71d4152d0e20" sourceRef="sid-adfc1392-a76d-4bfd-8ae4-0ceec640f128" targetRef="sid-d91668b1-fd7c-4171-ac86-42b01a614e73"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_sub2">
+    <bpmndi:BPMNPlane bpmnElement="sub2" id="BPMNPlane_sub2">
+      <bpmndi:BPMNShape id="shape-4282f3c5-9816-48cf-9347-212241b5b49c" bpmnElement="sid-eeb6d44b-6b42-4a25-9473-637fcea11628">
+        <omgdc:Bounds x="-630.0" y="-25.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-88d1a105-b053-44ff-a3bb-f045e8de890c" bpmnElement="sid-d52eb33c-5145-4f7f-91fc-c4bf6835505e">
+        <omgdc:Bounds x="-550.0" y="-50.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-2f765d02-048b-4f40-b66f-4a8c7ec50e06" bpmnElement="sid-fb8fdae1-fe53-4683-9bd5-95afbb4d4e25">
+        <omgdi:waypoint x="-600.0" y="-10.0"/>
+        <omgdi:waypoint x="-550.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape-5da34ce1-288e-40ec-b36d-efb2da9fe76a" bpmnElement="sid-ed17720c-0c29-4889-a17e-ee17c4d454fc">
+        <omgdc:Bounds x="-380.0" y="-50.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-98a6121e-246d-4a5b-8c05-307522b3acbc" bpmnElement="sid-4b7f3a01-9fd3-47a5-9bf3-f233e37cc504">
+        <omgdi:waypoint x="-450.0" y="-10.0"/>
+        <omgdi:waypoint x="-380.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape-cbc6b1d4-e4a1-4ba2-8db2-63d753fe8d75" bpmnElement="sid-adfc1392-a76d-4bfd-8ae4-0ceec640f128">
+        <omgdc:Bounds x="-220.0" y="-50.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-561b9343-4ade-416d-a1d5-50eed2f0f2e6" bpmnElement="sid-de01a187-662f-4e24-ab07-6a2e1ff10078">
+        <omgdi:waypoint x="-280.0" y="-10.0"/>
+        <omgdi:waypoint x="-220.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape-a91c2a37-05f4-4bcd-a9e1-3f212a615167" bpmnElement="sid-d91668b1-fd7c-4171-ac86-42b01a614e73">
+        <omgdc:Bounds x="-60.0" y="-25.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-47067d6a-aecb-4ef7-af46-18c34d00e090" bpmnElement="sid-e285ab00-ec0b-4a35-82bf-71d4152d0e20">
+        <omgdi:waypoint x="-120.0" y="-10.0"/>
+        <omgdi:waypoint x="-60.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
